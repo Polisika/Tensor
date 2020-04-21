@@ -1,0 +1,22 @@
+{
+  "name": "lesson00",
+  "version": "1.0.0",
+  "description": "My first lesson",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Polisika/Tensor.git"
+  },
+  "author": "Artem Karasyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Polisika/Tensor/issues"
+  },
+  "homepage": "https://github.com/Polisika/Tensor#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
