@@ -46,7 +46,7 @@ function fillArrayRand (len)
     res = [...res.keys()];
 
     // Фукнция возвращает случайное число от -0.5 до 0.5
-    let comparator = function() {
+    const comparator = function() {
         return Math.random() - 0.5;
     };
     // Перемешиваем числа случайным образом
