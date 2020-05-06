@@ -21,6 +21,14 @@ console.log("Среднее арифметическое в массиве");
 const avrg = mean(arr3);
 console.log(avrg);
 
+/**
+ * Генерирует массив длинной len 
+ * со случайными неповторяющимися числами от 0 до len.
+ * @params {Array} first
+ * @params {Array} second
+ *
+ * @returns (Array)
+ */
 function fillArrayRand (len)
 {
     // Проверка на валидность входных данных
@@ -47,6 +55,13 @@ function fillArrayRand (len)
     return res;
 }
 
+/**
+ * Поэлементно вычитает из массива first массив second.
+ * @params {Array} first
+ * @params {Array} second
+ * 
+ * @returns (Array)
+ */
 function unionArrays (first, second)
 {
     if (first === null) {
@@ -68,8 +83,11 @@ function unionArrays (first, second)
     });
 }
 
-/*
-*
+/**
+ * Возвращает среднее арифметическое элементов массива.
+ * @params {Array} arr
+ *
+ * @returns (Number)
  */
 function mean(arr) {
     if (arr.length === 0) return NaN;
