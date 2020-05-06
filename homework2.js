@@ -22,12 +22,11 @@ const avrg = mean(arr3);
 console.log(avrg);
 
 /**
- * Генерирует массив длинной len 
- * со случайными неповторяющимися числами от 0 до len.
- * @params {Array} first
- * @params {Array} second
+ * Возвращает массив длинной len со случайными неповторяющимися числами от 0 до len,
+ * или null если параметр задан неверно.
+ * @params {Number} len
  *
- * @returns (Array)
+ * @returns (Array) или null
  */
 function fillArrayRand (len)
 {
@@ -56,11 +55,12 @@ function fillArrayRand (len)
 }
 
 /**
- * Поэлементно вычитает из массива first массив second.
+ * Поэлементно вычитает из массива first массив second,
+ * возвращая массив или null если массивы неверно заданы.
  * @params {Array} first
  * @params {Array} second
- * 
- * @returns (Array)
+ *
+ * @returns (Array) или null
  */
 function unionArrays (first, second)
 {
@@ -84,10 +84,10 @@ function unionArrays (first, second)
 }
 
 /**
- * Возвращает среднее арифметическое элементов массива.
+ * Возвращает среднее арифметическое элементов массива или NaN если массив пуст.
  * @params {Array} arr
  *
- * @returns (Number)
+ * @returns (Number) среднее арифметическое
  */
 function mean(arr) {
     if (arr.length === 0) return NaN;
