@@ -4,6 +4,7 @@ export class Component {
     constructor() {
         this.container = undefined;
         this.popup = undefined;
+        this.onClick = this.onClick.bind(this);
     }
 
     render(params) {

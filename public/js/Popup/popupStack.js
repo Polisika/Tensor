@@ -7,14 +7,21 @@ export class PopupStack extends Component {
         super();
         this.stack = [];
         this.person = person;
+        this.removePopup = this.removePopup.bind(this);
     }
 
     openPopup(event) {
-        if (this.stack.length === 0) {
+        const removePopup = document.getElementsByClassName('popup').item(0);
+        if (this.stack.length === 0 || removePopup) {
+            if (removePopup) {
+                removePopup.removeEventListener('click', this.removePopup);
+                removePopup.remove();
+                this.stack = [];
+            }
             const popup = Factory.createPopup(this.person);
             popup.mount(this.person.container, 'afterbegin', event);
             this.stack.push(popup);
-            document.getElementById(this.person.id).addEventListener('click', this.removePopup.bind(this));
+            document.getElementById(this.person.id).addEventListener('click', this.removePopup);
         }
     }
 
@@ -23,6 +30,7 @@ export class PopupStack extends Component {
         const popup = this.stack.pop();
         if (!popup) throw "В стеке нет popup'ов.";
 
+        document.getElementById(this.person.id).removeEventListener('click', this.removePopup);
         popup.unmount();
         this.stack.length = 0;
     }

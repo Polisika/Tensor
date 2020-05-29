@@ -1,6 +1,6 @@
 'use strict';
 
-import { Factory, Model, DataSet } from './exportLib.js';
+import { Factory, Model, DataSet, Pagination } from './exportLib.js';
 
 const header = Factory.cleateHeader();
 header.mount(document.body);
@@ -37,13 +37,7 @@ let dataset = new DataSet({
     }
 );
 
-let a = dataset.read(1);
-a.then(res => Factory.createStudent(res).mount(document.getElementById('main')));
-
-
 let studentArr = [];
 
-for (let i in studentData) {
-    studentArr.push(Factory.createStudent(studentData[i]));
-}
-studentArr.forEach( student => student.mount(document.getElementById('main')) );
+let pagination = new Pagination(dataset, 2);
+pagination.mount(document.body, 'beforeend');

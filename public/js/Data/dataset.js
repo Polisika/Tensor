@@ -25,14 +25,24 @@ export class DataSet {
     toModel(res) {
         return new (this.params.model)(res);
     }
+
     read(id) {
         return this.query(
             `${this.params.object}/${id || ''}`,
             {
                 method: 'GET'
-            })
-            .then( res => {
-                return this.toModel(res)
+            });
+    }
+
+    list(page = 1, limit = Number.MAX_SAFE_INTEGER) {
+        return this.query(
+            `${this.params.object}/`,
+            {
+                method: 'GET'
+            },
+            {
+                '_page': page,
+                '_limit': limit,
             });
     }
 

@@ -9,5 +9,6 @@ import { PopupStack } from "./Popup/popupStack.js";
 import { Factory } from './factory.js';
 import { DataSet } from "./Data/dataset.js";
 import { Model } from "./Data/Model.js";
+import { Pagination } from "./Components/Pagination.js";
 
-export { Component, Person, Student, Header, Popup, PopupStack, Factory, DataSet, Model };
+export { Component, Person, Student, Header, Popup, PopupStack, Factory, DataSet, Model, Pagination };

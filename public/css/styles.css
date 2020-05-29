@@ -77,6 +77,7 @@
     margin: 0 auto;
     width: 80%;
     flex-wrap: wrap;
+    height: 400px;
 }
 
 .spacer {
@@ -108,4 +109,16 @@
 
 .popup__closer:hover {
     background-color: beige;
+}
+
+.pagination {
+    display: block;
+}
+
+.pagination__button {
+    display: inline-block;
+    padding: 10px 10px;
+    border: black 1px;
+    border-radius: 50%;
+    background-color: azure;
 }

@@ -9,7 +9,7 @@ export class Person extends Component{
      */
     constructor(params = { fullName: 'Аноним', bday: new Date(), photo: 'img/ava06.jpg', phone: '', active: new Data() }) {
         super(params);
-        this.fullName = params.fullName;
+        this.fullName = params.fullName || params.title;
         this.bday = params.bday;
         this.photo = params.photo;
         this.phone = params.phone;
